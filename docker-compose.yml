@@ -1,0 +1,13 @@
+name: kokoro
+services:
+    kokoro-fastapi-cpu:
+        ports:
+            - 8880:8880
+        image: ghcr.io/remsky/kokoro-fastapi-cpu
+        restart: always
+        networks:
+          - podman-llms-network
+
+networks:
+  podman-llms-network:
+    external: true
